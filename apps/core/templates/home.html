@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% include 'partials/home_main.html' with news=news %}
+{% endblock %}
+
+{% load static %}
+{% block extra_js %}
+<!-- Custom Js -->
+<script src="{% static 'js/read-more.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script type="module" src="{% static 'js/nyt.js' %}"></script>
+<script type="module" src="{% static 'js/config.js' %}"></script>
+{% endblock %}

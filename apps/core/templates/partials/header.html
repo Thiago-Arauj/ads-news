@@ -1,0 +1,31 @@
+{% load static %}
+<!-- Header::begin -->
+<header class="bg-dark py-2 py-lg-3 mb-2 mb-lg-5">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo::begin -->
+            <a class="navbar-brand">
+                <img src="{% static 'images/base/adsnewslogo.png' %}" alt="Logo AdsNews Dark" width="120">
+            </a>
+            <!-- Logo::end -->
+
+            <!-- Nav Right::begin -->
+            <div class="nav flex-nowrap align-items-center">
+                <div class="nav-item d-none d-md-block">
+                    <a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Assine</a>
+                </div>
+                <a class="nav-link link-light" role="button" href="#" id="navSearch">
+                    <i class="bi bi-search fs-4"> </i>
+                </a>
+                <div class="nav-item">
+                    <a class="nav-link p-0 link-light" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button"
+                        aria-controls="offcanvasMenu">
+                        <i class="bi bi-text-right rtl-flip fs-2"> </i>
+                    </a>
+                </div>
+            </div>
+            <!-- Nav Right::end -->
+        </div>
+    </nav>
+</header>
+<!-- Header::end -->

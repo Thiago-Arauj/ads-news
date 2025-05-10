@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site de Notícias criado em Bootstrap para um trabalho da cadeira Desenvolvimento Web I">
+    <meta name="keywords" content="Notícias, Trabalho, Bootstrap, Desenvolvimento Web I, Unifip, P3">
+    <meta name="author" content="André Antônio, Thiago Araujo, Paulo Cleidson">
+    <title>{% block title %}ADS News{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/base/favicon.png' %}">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="{% static 'css/vendor/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    {% block extra_css %}{% endblock %}
+
+    <!-- Font Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+
+    {% include 'partials/offcanvas-menu.html' %}
+
+    {% block main %}{% endblock %}
+
+    {% include 'partials/footer.html' %}
+
+    <!-- Bootstrap Js -->
+    <script src="{% static 'js/vendor/bootstrap.bundle.min.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
