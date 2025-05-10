@@ -1,0 +1,601 @@
+{% load static %}
+<!-- Main::begin -->
+<main>
+    <!-- Advertising::begin -->
+    <section class="my-4 my-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="ads-container">
+                    <p class="ads-placeholder-label">Publicidade</p>
+                    <img src="assets/images/ads1.jfif" alt="Publicidade">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Advertising::end -->
+
+    <!-- Featured::begin -->
+    <section class="mb-2 mb-xl-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-xl-6">
+                    {% include 'partials/carousel.html' with news=news %}
+                </div>
+                <div class="col-12 col-xl-6">
+                    <div class="row g-4 mb-4">
+                        <article>
+                            <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+                                <a href="#"
+                                    title="Instituto Butantan inaugura laboratório para preservar uma das cobras mais raras do Brasil">
+                                    <div class="featured-post-container">
+                                        <div class="featured-post-img">
+                                            <span class="cat badge text-bg-success">Ciência</span>
+                                            <picture>
+                                                <img src="assets/images/ecologia.avif"
+                                                    alt="Laboratorio de cobras do instituto butantan">
+                                            </picture>
+                                        </div>
+                                        <div class="featured-post-text featured-post-text-in">
+                                            <h2>Instituto Butantan inaugura laboratório para preservar uma das cobras
+                                                mais raras do Brasil</h2>
+                                            <span class="secondary-text ">45 minutos</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="row mb-4 mb-xl-0">
+                        <div class="col-12 col-md-6 mb-4 mb-md-0">
+                            <article>
+                                <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                                    <a href="#"
+                                        title="As celebridades de Hollywood que rejuvenesceram e chamam atenção pelo novo visual">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <span class="cat badge text-bg-danger">Entretenimento</span>
+                                                <picture>
+                                                    <img src="assets//images/news/befunky.avif"
+                                                        alt="As celebridades de Hollywood que rejuvenesceram e chamam atenção pelo novo visual">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>As celebridades de Hollywood que rejuvenesceram e chamam atenção
+                                                    pelo novo visual</h2>
+                                                <span class="secondary-text ">15 de Março</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article>
+                                <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <span class="cat badge text-bg-success">Ciência</span>
+                                                <picture>
+                                                    <img src="assets/images/news/mammutknochen.avif" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Escavações na Áustria revelam ossos de mamute de 25 mil anos;
+                                                    fotos</h2>
+                                                <span>2 horas atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Featured::end -->
+
+    <!-- Featured 2::begin -->
+    <section class="mb-4 mb-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="cat-title">
+                    <h4><span>Destaques</span></h4>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <article>
+                        <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img">
+                                        <span class="cat badge text-bg-danger">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span class="feed-post-datetime">Há 1 hora</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <article>
+                        <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img">
+                                        <span class="cat badge text-bg-danger">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span class="feed-post-datetime">Há 47 minutos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <article>
+                        <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img">
+                                        <span class="cat badge text-bg-danger">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span class="feed-post-datetime">Há 3 horas</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <article>
+                        <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img">
+                                        <span class="cat badge text-bg-danger">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span class="feed-post-datetime">Há 47 minutos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured 2::end -->
+
+    <!-- Infinite Scroll::begin -->
+    <section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
+        <div class="container">
+            <div class="row">
+                <div id="infinite-news" class="col-12 col-md-8 post-list">
+                    <div class="row" id="scroller">
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                <p class="d-none d-lg-block">Drawings offended yet answered Jennings
+                                                    perceive laughing six did
+                                                    far. Rooms oh fully taken by worse do.</p>
+                                                <span>2 dias atrás</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div id="loading">Carregando...</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="row">
+                        <div class="cat-title">
+                            <h4><span>Mais Lidas</span></h4>
+                        </div>
+                    </div>
+                    <div class="row mb-4 mb-lg-5">
+                        <div class="sticky-top">
+                            <div class="featured-post-list">
+                                <div class="most-read">
+                                    <a href="#"
+                                        title="Prefeitura de São Bentinho inicia corte de terras na zona rural do município">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-text">
+                                                <span class="cat-date">21/01/2025</span>
+                                                <h2>
+                                                    Prefeitura de São Bentinho inicia corte de terras na zona rural
+                                                    do município
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        title="Após pedido de Gilbertinho, governo da PB destina ônibus para Lagoa e Nova Olinda">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-text">
+                                                <span class="cat-date">24/01/2025</span>
+                                                <h2>
+                                                    Após pedido de Gilbertinho, governo da PB destina ônibus para
+                                                    Lagoa e Nova Olinda
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        title="Inmet renova alerta de chuvas intensas para todas as cidades da Paraíba">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-text">
+                                                <span class="cat-date">06/02/2025</span>
+                                                <h2>
+                                                    Inmet renova alerta de chuvas intensas para todas as cidades da
+                                                    Paraíba
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        title="Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-text">
+                                                <span class="cat-date">06/02/2025</span>
+                                                <h2>
+                                                    Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        title="Transporte de peça de 250 toneladas interdita BR-101 e atrai curiosos">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-text">
+                                                <span class="cat-date">03/02/2025</span>
+                                                <h2>
+                                                    Transporte de peça de 250 toneladas interdita BR-101 e atrai
+                                                    curiosos
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="ads-container mb-4 mb-md-0">
+                            <p class="ads-placeholder-label">Publicidade</p>
+                            <img src="assets/images/adv.png" alt="Publicidade">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Infinite Scroll::end -->
+
+    <!-- Advertising 2::begin -->
+    <section class="mb-4 mb-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="ads-container">
+                    <p class="ads-placeholder-label">Publicidade</p>
+                    <img src="assets/images/ads4.webp" alt="Publicidade">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Advertising 2::end -->
+
+    <!-- Videos::begin -->
+    <section class="mb-4 mb-lg-5 videos p-4 p-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="cat-title">
+                    <h4><span>Vídeos</span></h4>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-xl-8">
+                    <article>
+                        <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img">
+                                        <span class="cat badge text-bg-warning">Tecnologia</span>
+                                        <picture>
+                                            <img src="assets/images/lua.avif" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text featured-post-text-in read-more">
+                                        <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e
+                                            registra imagens</h2>
+                                        <p>Missão Hera tem como destino o asteroide Dimorphos, o
+                                            primeiro a ter sua
+                                            órbita desviada por<span class="dots">...</span> <span class="more">ação
+                                                humana. Mas, enquanto não chega lá,
+                                                fez
+                                                registros impressionante de uma das luas de
+                                                Marte</span><span class="read-more-button">Leia Mais</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-xl-12 mb-4 mb-md-0">
+                            <article>
+                                <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <span class="cat badge text-bg-success">Ciência</span>
+                                                <picture>
+                                                    <img src="assets/images/ecologia.avif" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Instituto Butantan inaugura laboratório para preservar uma das
+                                                    cobras mais raras do Brasil</h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-12">
+                            <article>
+                                <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+                                    <a href="#" title="">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <span class="cat badge text-bg-danger">Entretenimento</span>
+                                                <picture>
+                                                    <img src="assets/images/01.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Videos::end -->
+
+    <!-- Sponsored News::begin -->
+    <section class="mb-4 mb-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="cat-title">
+                    <h4><span>Notícias patrocinadas</span></h4>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article>
+                        <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img featured-post-img-out">
+                                        <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span>1 dia atrás</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article>
+                        <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img featured-post-img-out">
+                                        <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span>2 dias atrás</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article>
+                        <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                            <a href="#" title="">
+                                <div class="featured-post-container">
+                                    <div class="featured-post-img featured-post-img-out">
+                                        <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
+                                        <picture>
+                                            <img src="assets/images/01.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                    <div class="featured-post-text">
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                        <span>2 dias atrás</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Sponsored News::begin -->
+</main>
+<!-- Main::end -->
