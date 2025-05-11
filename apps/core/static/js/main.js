@@ -1,5 +1,5 @@
 // Prevent on Click Scroll page to top
-const links = document.getElementsByTagName("a");
+const links = document.querySelectorAll("span.read-more-button");
 for(link of links) {
     link.setAttribute("onclick", "return false;");
 }
