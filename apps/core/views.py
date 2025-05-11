@@ -1,6 +1,12 @@
 from django.shortcuts import get_object_or_404, render
 from apps.news.models import News
+from django.contrib.auth.decorators import login_required
 
+#exemplo de uma página que requer autenticação
+#@login_required
+# def main(request):
+#     news= News.objects.all()
+#     return render(request, 'home.html', {'news': news})
 
 def home(request):
     news = News.objects.all()
@@ -43,6 +49,7 @@ def read_news(request, pk):
 
     return render(request, 'read_news.html', {'news': news})
 
+
 def list_news(request):
     news_by_category = News.objects.all()
     sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3] 
@@ -55,3 +62,4 @@ def list_news(request):
     }
 
     return render(request, 'list_news.html', {'news': news})
+
