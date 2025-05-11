@@ -42,3 +42,16 @@ def read_news(request, pk):
     }
 
     return render(request, 'read_news.html', {'news': news})
+
+def list_news(request):
+    news_by_category = News.objects.all()
+    sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3] 
+    most_read = News.objects.all().order_by('-views')[:5] 
+
+    news = {
+        'news_by_category': news_by_category,
+        'most_read': most_read,  
+        'sponsored': sponsored,     
+    }
+
+    return render(request, 'list_news.html', {'news': news})
