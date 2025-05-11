@@ -61,7 +61,7 @@ class News(Category):
         blank=True,
         verbose_name="Imagem"
     )
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='news', verbose_name="Categoria da Notícia")
+    
     views = models.PositiveIntegerField(default=0, verbose_name="Visualizações")
     in_carousel = models.BooleanField(default=False, verbose_name="Slide")
     is_featured = models.BooleanField(default=False, verbose_name="Destacar")

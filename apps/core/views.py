@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from apps.news.models import News
 from django.contrib.auth.decorators import login_required
+from .forms import NewsForm
 
 #exemplo de uma página que requer autenticação
 #@login_required
@@ -48,4 +49,16 @@ def read_news(request, pk):
     }
 
     return render(request, 'read_news.html', {'news': news})
-  
+
+
+@login_required
+def add_news_view(request):
+    if request.method == 'POST':
+        form = NewsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = NewsForm()
+
+    return render(request, 'add_news/add_news.html', {'form': form})
