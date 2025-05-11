@@ -376,7 +376,18 @@ a {
     z-index: 1;
     font-family: "Open Sans", sans-serif;
 }
-
+.cat-date {
+    float: left;
+    width: 100%;
+    position: relative;
+    color: #777;
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
 
 /************************************************
    Videos
@@ -400,6 +411,37 @@ a {
 }
 
 /************************************************
+   Content
+************************************************/
+.content {
+    overflow-x: hidden;
+}
+
+.content-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: "Open Sans", sans-serif;
+}
+
+.content span {
+    float: left;
+    width: 100%;
+    position: relative;
+    color: #777;
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.content p {
+    color: var(--as-main-text-color);
+    line-height: 1.5;
+}
+
+/************************************************
  Media Queries
 ************************************************/
 @media screen and (min-width: 576px) {
@@ -413,7 +455,7 @@ a {
     .featured-post-7 .featured-post-text h2 {
         font-size: 2.2rem;
     }
-
+    
     .featured-post-2 .featured-post-img,
     .featured-post-3 .featured-post-img,
     .featured-post-7 .featured-post-img,
@@ -440,6 +482,7 @@ a {
         top: 0 !important;
         background-color: transparent !important;
     }
+
     .cat-title h4:after {
         height: 6px !important;
         background-color: transparent !important;
@@ -450,6 +493,15 @@ a {
         bottom: 0;
         -webkit-border-after-width: 2px;
         -webkit-border-before-width: 2px;
+    }
+
+    .content-title {
+        font-size: 2.2rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+        line-height: 1.5;
     }
 }
 
@@ -480,4 +532,17 @@ a {
     .featured-post-4 .featured-post-img {
         height: calc((var(--as-featured-post-height) - var(--as-featured-post-gap)) / 2);
     }
+
+    .content-title {
+        font-size: 2.8rem;
+        line-height: 1.3;
+        width: 80%;
+    }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .most-read .featured-post-text {
+        padding-left: 0;
+    }
+}
+

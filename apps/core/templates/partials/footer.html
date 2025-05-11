@@ -4,18 +4,17 @@
     <div class="container">
         <div class="py-5">
             <div class="row">
-
                 <div class="col-12 col-md-2 mb-3">
-                    <img class="logo-footer w-100 p-3" src="assets/images/adsnewslogo.png" alt="logo do site">
+                    <a class="navbar-brand" href="{% url 'home'%}">
+                        <img class="logo-footer w-100 p-3" src="{% static 'images/base/adsnewslogo.png' %}" alt="Logo AdsNews Dark">
+                    </a>
                 </div>
-
                 <div class="col-12 col-md-2 mb-3 text-white">
                     <h5>ADS News</h5>
                     <h6>Fique por dentro do código, por trás das notícias!</h6>
                     <ul class="nav flex-column">
                     </ul>
                 </div>
-
                 <div class="col-12 col-md-2 mb-3 text-white">
                     <h5>Pincipais</h5>
                     <ul class="nav flex-column">
@@ -27,7 +26,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="col-md-5 offset-md-1 mb-3">
                     <form>
                         <h5 class="text-white">Se inscreva na nossa newsletter!</h5>
@@ -40,24 +38,20 @@
                     </form>
                 </div>
             </div>
-
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                 <p class="text-white">© 2025 ADS News. Todos os direitos reservados.</p>
-
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="https://github.com/andreantoniobr/ads-news"
-                            target="_blank">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                width="40" height="40" alt="GitHub" class="rounded-icon">
-                        </a></li>
-
-                    <li class="ms-3"><a class="link-body-emphasis"
-                            href="https://www.instagram.com/analisedesistemasunifip/" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="40"
-                                height="40" alt="GitHub">
-                        </a></li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="https://github.com/andreantoniobr/ads-news" target="_blank">
+                            <img src="{% static 'images/base/GitHub-Mark.png' %}" width="40" height="40" alt="GitHub" class="rounded-icon">
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="https://www.instagram.com/analisedesistemasunifip/" target="_blank">
+                            <img src="{% static 'images/base/Instagram_icon.png' %}" width="40" height="40" alt="GitHub">
+                        </a>
+                    </li>
                 </ul>
-
             </div>
         </div>
     </div>

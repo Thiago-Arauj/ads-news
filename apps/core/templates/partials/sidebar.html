@@ -1,0 +1,11 @@
+{% load static %}
+<div class="sidebar">
+    {% include 'partials/most_read.html' with news=news %}
+
+    <div class="row">
+        <div class="ads-container mb-4 mb-md-0">
+            <p class="ads-placeholder-label">Publicidade</p>
+            <img src="{% static 'images/ads/adv.png' %}" alt="Publicidade">
+        </div>
+    </div>
+</div>

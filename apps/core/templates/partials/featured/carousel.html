@@ -1,4 +1,4 @@
-{% load news_tags  %}
+{% load news_tags %}
 <!-- Carousel::begin -->
 <div id="main-carousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -7,10 +7,10 @@
         <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>        
     </div>
     <div class="carousel-inner">
-        {% for news_item in news %}         
+        {% for news_item in news.carousel %}         
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
-                <a href="#" title="{{ news_item.title }}">
+                <a href="{% url 'read_news' news_item.id %}" title="{{ news_item.title }}">
                     <div class="featured-post-container">
                         <div class="featured-post-img">
                             {% category_badge news_item.category.name news_item.category.color %}
