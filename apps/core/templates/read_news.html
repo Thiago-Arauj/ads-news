@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- Main::begin -->
+<main>
+    {% include 'partials/advertising/advertising.html' %}
+    
+    <section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
+        <div class="container">
+            <div class="row mb-4">
+                <h1 class="content-title">{{ news.featured.title }}</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="content">
+                    <div class="row mb-4">
+                        <span >Publicado em: {{ news.featured.created_at|date:"d/m/Y" }} - {{ news.featured.views }} Visualizações</span>    
+                    </div> 
+                    <div class="row mb-4">
+                        <img class="img-fluid" src="{{ news.featured.image.url }}" alt="{{ news.featured.title }}"> 
+                    </div>
+                    <div class="row mb-4">
+                        <p>{{ news.featured.content }}</p>   
+                    </div>                      
+                    </div>                    
+                </div>
+                <div class="col-12 col-md-4">
+                    {% include 'partials/sidebar.html' with news=news %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/sponsored.html' with news=news %}
+</main>
+<!-- Main::end -->
+{% endblock %}

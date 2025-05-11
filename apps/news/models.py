@@ -19,6 +19,8 @@ class News(BaseModel):
     content = models.TextField(verbose_name="Conteúdo")
     image = models.ImageField(upload_to="news/", null=True, blank=True, verbose_name="Imagem")
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='news', verbose_name="Categoria da Notícia")
+    views = models.PositiveIntegerField(default=0, verbose_name="Visualizações")
+    in_carousel = models.BooleanField(default=False, verbose_name="Slide")
     is_featured = models.BooleanField(default=False, verbose_name="Destacar")
     is_sponsored = models.BooleanField(default=False, verbose_name="Patrocinada")
 
