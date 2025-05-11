@@ -1,0 +1,63 @@
+{% load news_tags %}
+<div class="row g-4 mb-4">
+    <article>
+        <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+            <a href="{% url 'read_news' news.featured1.id %}" title="{{ news.featured1.title }}">
+                <div class="featured-post-container">
+                    <div class="featured-post-img">
+                        {% category_badge news.featured1.category.name news.featured1.category.color %}
+                        <picture>
+                            <img src="{{ news.featured1.image.url }}" alt="{{ news.featured1.title }}">
+                        </picture>
+                    </div>
+                    <div class="featured-post-text featured-post-text-in">
+                        <h2>{{ news.featured1.title }}</h2>
+                        <span class="secondary-text ">{{ news.featured1.created_at|timesince }}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </article>
+</div>
+<div class="row mb-4 mb-xl-0">
+    <div class="col-12 col-md-6 mb-4 mb-md-0">
+        <article>
+            <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                <a href="{% url 'read_news' news.featured2.id %}" title="{{ news.featured2.title }}">
+                    <div class="featured-post-container">
+                        <div class="featured-post-img">
+                            {% category_badge news.featured2.category.name news.featured2.category.color %}
+                            <picture>
+                                <img src="{{ news.featured2.image.url }}" alt="{{ news.featured2.title }}">
+                            </picture>
+                        </div>
+                        <div class="featured-post-text featured-post-text-in">
+                            <h2>{{ news.featured2.title }}</h2>
+                            <span class="secondary-text ">{{ news.featured2.created_at|timesince }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+    <div class="col-12 col-md-6">
+        <article>
+            <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                <a href="{% url 'read_news' news.featured3.id %}" title="{{ news.featured3.title }}">
+                    <div class="featured-post-container">
+                        <div class="featured-post-img">
+                            {% category_badge news.featured3.category.name news.featured3.category.color %}
+                            <picture>
+                                <img src="{{ news.featured3.image.url }}" alt="{{ news.featured3.title }}">
+                            </picture>
+                        </div>
+                        <div class="featured-post-text featured-post-text-in">
+                            <h2>{{ news.featured3.title }}</h2>
+                            <span>{{ news.featured3.created_at|timesince }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{% load news_tags %}
+    <div class="row">
+        <div class="cat-title">
+            <h4><span>Mais Lidas</span></h4>
+        </div>
+    </div>
+    <div class="row mb-4 mb-lg-5">
+        <div class="sticky-top">
+            <div class="featured-post-list">
+                <div class="most-read">
+                    {% for news in news.most_read %}
+                    <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
+                        <div class="featured-post-container">
+                            <div class="featured-post-text">
+                                <span class="cat-date">{{ news.created_at|date:"d/m/Y" }} - {{ news.views }} Visualizações</span>
+                                <h2>{{ news.title }}</h2>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,14 @@
+<!-- Featured::begin -->
+<section class="mb-2 mb-xl-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-12 col-xl-6">
+                {% include 'partials/featured/carousel.html' with news=news %}
+            </div>
+            <div class="col-12 col-xl-6">
+                {% include 'partials/featured/featured_content.html' with news=news %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured::end -->

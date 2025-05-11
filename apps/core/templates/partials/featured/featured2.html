@@ -1,0 +1,36 @@
+{% load news_tags %}
+<!-- Featured 2::begin -->
+<section class="mb-4 mb-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="cat-title">
+                <h4><span>Destaques</span></h4>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for news in news.featureds %}
+            <div class="col-sm-6 col-lg-3">
+                <article>
+                    <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                        <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
+                            <div class="featured-post-container">
+                                <div class="featured-post-img">
+                                    {% category_badge news.category.name news.category.color %}
+                                    <picture>
+                                        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                                    </picture>
+                                </div>
+                                <div class="featured-post-text">
+                                    <h2>{{ news.title }}</h2>
+                                    <span class="feed-post-datetime">{{ news.created_at|timesince }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Featured 2::end -->
