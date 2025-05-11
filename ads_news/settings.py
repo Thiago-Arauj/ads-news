@@ -142,3 +142,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# encaminhameentos das areas de login, logout e acesso não permitido 
+LOGIN_URL = 'login'
+# login vai direcionar para a url do 'django.contrib.auth.urls' que é parametro do accounts em urls.py
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
