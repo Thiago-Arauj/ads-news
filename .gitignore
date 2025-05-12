@@ -92,5 +92,6 @@ local_settings.py
 
 .env
 db.sqlite3db.sqlite3
+db.sqlite3
 apps/core/__pycache__/__init__.cpython-312.pyc
 apps/core/__pycache__/__init__.cpython-312.pyc
