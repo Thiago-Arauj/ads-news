@@ -1,63 +1,77 @@
 {% load news_tags %}
+{% if featured_news %}
 <div class="row g-4 mb-4">
+    {% if featured_news.0 %}
+    {% with news=featured_news.0 %}
     <article>
         <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
-            <a href="{% url 'read_news' news.featured1.id %}" title="{{ news.featured1.title }}">
+            <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                 <div class="featured-post-container">
                     <div class="featured-post-img">
-                        {% category_badge news.featured1.category.name news.featured1.category.color %}
+                        {% category_badge news.get_category_name_display news.category_color %}
                         <picture>
-                            <img src="{{ news.featured1.image.url }}" alt="{{ news.featured1.title }}">
+                            <img src="{{ news.image.url }}" alt="{{ news.title }}">
                         </picture>
                     </div>
                     <div class="featured-post-text featured-post-text-in">
-                        <h2>{{ news.featured1.title }}</h2>
-                        <span class="secondary-text ">{{ news.featured1.created_at|timesince }}</span>
+                        <h2>{{ news.title }}</h2>
+                        <span class="secondary-text ">{{ news.created_at|timesince }}</span>
                     </div>
                 </div>
             </a>
         </div>
     </article>
+    {% endwith %}
+    {% endif %}
 </div>
 <div class="row mb-4 mb-xl-0">
     <div class="col-12 col-md-6 mb-4 mb-md-0">
+        {% if featured_news.1 %}
+        {% with news=featured_news.1 %}
         <article>
             <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
-                <a href="{% url 'read_news' news.featured2.id %}" title="{{ news.featured2.title }}">
+                <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                     <div class="featured-post-container">
                         <div class="featured-post-img">
-                            {% category_badge news.featured2.category.name news.featured2.category.color %}
+                            {% category_badge news.get_category_name_display news.category_color %}
                             <picture>
-                                <img src="{{ news.featured2.image.url }}" alt="{{ news.featured2.title }}">
+                                <img src="{{ news.image.url }}" alt="{{ news.title }}">
                             </picture>
                         </div>
                         <div class="featured-post-text featured-post-text-in">
-                            <h2>{{ news.featured2.title }}</h2>
-                            <span class="secondary-text ">{{ news.featured2.created_at|timesince }}</span>
+                            <h2>{{ news.title }}</h2>
+                            <span class="secondary-text ">{{ news.created_at|timesince }}</span>
                         </div>
                     </div>
                 </a>
             </div>
         </article>
+        {% endwith %}
+        {% endif %}
     </div>
     <div class="col-12 col-md-6">
+        {% if featured_news.2 %}
+        {% with news=featured_news.2 %}
         <article>
             <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
-                <a href="{% url 'read_news' news.featured3.id %}" title="{{ news.featured3.title }}">
+                <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                     <div class="featured-post-container">
                         <div class="featured-post-img">
-                            {% category_badge news.featured3.category.name news.featured3.category.color %}
+                            {% category_badge news.get_category_name_display news.category_color %}
                             <picture>
-                                <img src="{{ news.featured3.image.url }}" alt="{{ news.featured3.title }}">
+                                <img src="{{ news.image.url }}" alt="{{ news.title }}">
                             </picture>
                         </div>
                         <div class="featured-post-text featured-post-text-in">
-                            <h2>{{ news.featured3.title }}</h2>
-                            <span>{{ news.featured3.created_at|timesince }}</span>
+                            <h2>{{ news.title }}</h2>
+                            <span>{{ news.created_at|timesince }}</span>
                         </div>
                     </div>
                 </a>
             </div>
         </article>
+        {% endwith %}
+        {% endif %}
     </div>
 </div>
+{% endif %}

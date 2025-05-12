@@ -1,19 +1,21 @@
-
 {% extends 'base.html' %}
 {% load news_tags %}
 {% block main %}
 <!-- Main::begin -->
 <main>
     {% include 'partials/advertising/advertising.html' %}
-    
+
     <!-- Infinite Scroll::begin -->
     <section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
+
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 post-list">
+                    {% include 'partials/news/news_filter.html' %}
+
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-12">
-                            {% for news in news.news_by_category %}
+                        {% for news in news_by_category %}
+                        <div class="col-12 col-sm-6 col-md-12">                            
                             <article>
                                 <div class="featured-post-2 mb-4 pb-4 border-bottom">
                                     <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
@@ -31,10 +33,12 @@
                                         </div>
                                     </a>
                                 </div>
-                            </article>
-                            {% endfor %}
-                        </div>                       
-                    </div>
+                            </article>                            
+                        </div>
+                        {% endfor %}
+                    </div> 
+
+                    {% include 'partials/news/news_pagination.html' %}   
                 </div>
                 <div class="col-12 col-md-4">
                     {% include 'partials/sidebar.html' with news=news %}
