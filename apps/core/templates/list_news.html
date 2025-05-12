@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load news_tags %}
+{% block main %}
+<!-- Main::begin -->
+<main>
+    {% include 'partials/advertising/advertising.html' %}
+
+    <!-- Infinite Scroll::begin -->
+    <section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 post-list">
+                    {% include 'partials/news/news_filter.html' %}
+
+                    <div class="row">
+                        {% for news in news_by_category %}
+                        <div class="col-12 col-sm-6 col-md-12">                            
+                            <article>
+                                <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                    <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
+                                        <div class="featured-post-container">
+                                            <div class="featured-post-img">
+                                                <picture>
+                                                    <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                                                </picture>
+                                            </div>
+                                            <div class="featured-post-text">
+                                                <h2>{{ news.title }}</h2>
+                                                <p class="d-none d-lg-block">{% read_more news.abstract 100 %}</p>
+                                                <span>{{ news.created_at|timesince }}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </article>                            
+                        </div>
+                        {% endfor %}
+                    </div> 
+
+                    {% include 'partials/news/news_pagination.html' %}   
+                </div>
+                <div class="col-12 col-md-4">
+                    {% include 'partials/sidebar.html' with news=news %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Infinite Scroll::end -->
+
+    {% include 'partials/sponsored.html' with news=news %}
+</main>
+<!-- Main::end -->
+{% endblock %}
+
+{% load static %}
+{% block extra_js %}
+<!-- Custom Js -->
+<script src="{% static 'js/read-more.js' %}"></script>
+{% endblock %}

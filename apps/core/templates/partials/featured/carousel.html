@@ -1,4 +1,5 @@
 {% load news_tags %}
+{% if carousel_news %}
 <!-- Carousel::begin -->
 <div id="main-carousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -7,21 +8,21 @@
         <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>        
     </div>
     <div class="carousel-inner">
-        {% for news_item in news.carousel %}         
+        {% for news in carousel_news %}         
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
-                <a href="{% url 'read_news' news_item.id %}" title="{{ news_item.title }}">
+                <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                     <div class="featured-post-container">
                         <div class="featured-post-img">
-                            {% category_badge news_item.category.name news_item.category.color %}
+                            {% category_badge news.get_category_name_display news.category_color %}
                             <picture>
-                                <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
+                                <img src="{{ news.image.url }}" alt="{{ news.title }}">
                             </picture>
                         </div>
                         <div class="featured-post-text featured-post-text-in read-more">
-                            <h2 class="mb-2 mb-lg-4">{{ news_item.title }}</h2>
-                            <p>{% read_more news_item.abstract 100 %}</p>
-                            <span class="secondary-text ">{{ news_item.created_at|timesince }}</span>
+                            <h2 class="mb-2 mb-lg-4">{{ news.title }}</h2>
+                            <p>{% read_more news.abstract 100 %}</p>
+                            <span class="secondary-text ">{{ news.created_at|timesince }}</span>
                         </div>
                     </div>
                 </a>
@@ -39,3 +40,4 @@
     </button>
 </div>
 <!-- Carousel::end -->
+ {% endif %}
