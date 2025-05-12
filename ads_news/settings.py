@@ -107,6 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+THIRD_PARTY_NEWS_CONFIG = {
+    'SECTIONS': ['science', 'business', 'world', 'health'],
+    'BATCH_SIZE': 20,
+    'MAX_BATCHES': 5
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

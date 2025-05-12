@@ -13,8 +13,7 @@ class Category(BaseModel):
     category_name = models.CharField(
         max_length=3,
         choices=CategoryChoices.choices,
-        unique=True,
-        default=CategoryChoices.WORLD,
+        default=CategoryChoices.THIRD_PARTY,
         verbose_name="Categoria"
     )
     category_color = models.CharField(
@@ -43,7 +42,7 @@ class Category(BaseModel):
         verbose_name_plural = "Categorias"
 
     def __str__(self):
-        return str(self.name)
+        return str(self.category_name)
 
 
 class News(Category):
@@ -61,8 +60,10 @@ class News(Category):
         blank=True,
         verbose_name="Imagem"
     )
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='news', verbose_name="Categoria da Notícia")
-    views = models.PositiveIntegerField(default=0, verbose_name="Visualizações")
+    views = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Visualizações"
+    )
     in_carousel = models.BooleanField(default=False, verbose_name="Slide")
     is_featured = models.BooleanField(default=False, verbose_name="Destacar")
     is_sponsored = models.BooleanField(
