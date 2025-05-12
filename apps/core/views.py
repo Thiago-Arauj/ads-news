@@ -1,7 +1,13 @@
 from django.shortcuts import get_object_or_404, render
 from apps.news.models import News, Category
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import (
+    CreateView,
+    ListView,
+    DetailView,
+    UpdateView,
+    DeleteView
+)
 from django.views.generic.base import ContextMixin
 
 # exemplo de uma página que requer autenticação
@@ -19,14 +25,14 @@ class CommonContextMixin(ContextMixin):
             News.objects.filter(is_sponsored=True)
             .order_by('-created_at')[:3]
         )
-        most_read_news = News.objects.all().order_by('-views')[:5]       
+        most_read_news = News.objects.all().order_by('-views')[:5]
         context['most_read_news'] = most_read_news
         context['sponsored_news'] = sponsored_news
         context['categories'] = News.CategoryChoices.choices
         return context
 
 
-class HomeView(CommonContextMixin, TemplateView):  
+class HomeView(CommonContextMixin, TemplateView):
     template_name = 'home.html'
 
     def get_context_data(self, **kwargs):
@@ -109,3 +115,15 @@ class ListNewsByCategoryView(CommonContextMixin, ListView):
             queryset = queryset.order_by(order_by)
 
         return queryset
+
+
+class EditNews(CommonContextMixin, UpdateView):
+    model = News
+    template_name = 'list_news.html'
+    context_object_name = 'edit_news'
+
+
+class DeleteNews(CommonContextMixin, DeleteView):
+    model = News
+    template_name = 'list_news.html'
+    context_object_name = 'delete_news'
