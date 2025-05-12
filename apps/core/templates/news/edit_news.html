@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Editar Item</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{% url 'listar_itens' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

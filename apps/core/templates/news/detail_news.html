@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-3">{{ news.title }}</h1>
+
+    <p class="text-muted">Publicado há {{ news.created_at|timesince }}</p>
+
+    {% if news.image %}
+    <div class="mb-4">
+        <img src="{{ news.image.url }}" alt="{{ news.title }}" class="img-fluid">
+    </div>
+    {% endif %}
+
+    <div class="mb-3">
+        <strong>Categoria:</strong> {{ news.category_name }}
+    </div>
+
+    <div class="mb-4">
+        <p><strong>Resumo:</strong> {{ news.abstract }}</p>
+    </div>
+
+    <div class="content">
+        {{ news.content|safe }}
+    </div>
+
+    <div class="mt-5">
+        {% if news.is_featured %}<span class="badge bg-warning text-dark me-1">Destaque</span>{% endif %}
+        {% if news.is_sponsored %}<span class="badge bg-info text-dark me-1">Patrocinada</span>{% endif %}
+        {% if news.in_carousel %}<span class="badge bg-primary me-1">No Carrossel</span>{% endif %}
+    </div>
+</div>
+{% endblock %}
