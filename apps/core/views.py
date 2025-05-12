@@ -14,11 +14,6 @@ from .forms import NewsForm
 
 def home(request):
     news = News.objects.all()
-    carousel = News.objects.filter(in_carousel=True).order_by('-created_at')[:3] 
-    featured = News.objects.filter(is_featured=True).order_by('-created_at')[:7] 
-    sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3] 
-    most_read = News.objects.all().order_by('-views')[:5] 
-    
     carousel = News.objects.filter(in_carousel=True).order_by('-created_at')[:3]
     featured = News.objects.filter(is_featured=True).order_by('-created_at')[:7]
     sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3]
@@ -38,16 +33,11 @@ def home(request):
         'most_read': most_read,
         'sponsored': sponsored,
     }
-    
 
     return render(request, 'home.html', {'news': news})
 
 
 def read_news(request, pk):
-    featured_news = get_object_or_404(News, id=pk) 
-    sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3] 
-    most_read = News.objects.all().order_by('-views')[:5] 
-    
     featured_news = get_object_or_404(News, id=pk)
     sponsored = News.objects.filter(is_sponsored=True).order_by('-created_at')[:3]
     most_read = News.objects.all().order_by('-views')[:5]
@@ -57,8 +47,6 @@ def read_news(request, pk):
 
     news = {
         'featured': featured_news,
-        'most_read': most_read,  
-        'sponsored': sponsored,      
         'most_read': most_read,
         'sponsored': sponsored,
     }

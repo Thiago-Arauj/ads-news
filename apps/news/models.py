@@ -13,8 +13,6 @@ class Category(BaseModel):
     category_name = models.CharField(
         max_length=3,
         choices=CategoryChoices.choices,
-        unique=True,
-        default=CategoryChoices.WORLD,
         default=CategoryChoices.THIRD_PARTY,
         verbose_name="Categoria"
     )
@@ -44,7 +42,6 @@ class Category(BaseModel):
         verbose_name_plural = "Categorias"
 
     def __str__(self):
-        return str(self.name)
         return str(self.category_name)
 
 
@@ -63,6 +60,7 @@ class News(Category):
         blank=True,
         verbose_name="Imagem"
     )
+<<<<<<< HEAD
     
     views = models.PositiveIntegerField(default=0, verbose_name="Visualizações")
 =======
