@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.base import ContextMixin
 
-#exemplo de uma página que requer autenticação
-#@login_required
+# exemplo de uma página que requer autenticação
+# @login_required
 # def main(request):
 #     news= News.objects.all()
 #     return render(request, 'home.html', {'news': news})
@@ -53,6 +53,7 @@ class ReadNewsView(CommonContextMixin, DetailView):
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
+
 
         obj.views += 1
         obj.save(update_fields=['views'])

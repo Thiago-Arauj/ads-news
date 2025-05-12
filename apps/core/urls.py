@@ -8,3 +8,4 @@ urlpatterns = [
     path('news/', ListNewsView.as_view(), name='list_news'),
     path('news/category/<str:category_id>/', ListNewsByCategoryView.as_view(), name='list_news_by_category'),
 ]
+
