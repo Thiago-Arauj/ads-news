@@ -1,14 +1,16 @@
 from django.shortcuts import get_object_or_404, render
 from apps.news.models import News, Category
-from django.contrib.auth.decorators import login_required
+
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.base import ContextMixin
+from django.views.generic import (
+    CreateView,
+    ListView,
+    DetailView,
+    UpdateView,
+    DeleteView
+)
 
-# exemplo de uma página que requer autenticação
-# @login_required
-# def main(request):
-#     news= News.objects.all()
-#     return render(request, 'home.html', {'news': news})
 
 class CommonContextMixin(ContextMixin): 
     def get_context_data(self, **kwargs):

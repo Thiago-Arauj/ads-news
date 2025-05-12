@@ -1,0 +1,71 @@
+{% load static %}
+{% load news_tags %}
+
+<link rel="stylesheet" href="{% static 'css/news_list.css' %}">
+
+<section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 post-list">
+                <div class="row">
+                    {% for item in page_obj %}
+                    <div class="col-12 col-sm-6 col-md-12">
+                        <article>
+                            <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                <a href="{% url 'read_news' item.id %}" title="{{ item.titulo }}">
+                                    <div class="featured-post-container d-flex">
+                                        <div class="featured-post-img me-3">
+                                            <picture>
+                                                <img src="{{ item.imagem.url }}" alt="{{ item.titulo }}" style="width: 150px; height: auto;">
+                                            </picture>
+                                        </div>
+                                        <div class="featured-post-text">
+                                            <h2>{{ item.titulo }}</h2>
+                                            <p class="d-none d-lg-block">
+                                                {% read_more item.descricao 100 %}
+                                            </p>
+                                            <span>{{ item.criado_em|timesince }} voltar</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    {% empty %}
+                    <p>Nenhum item encontrado.</p>
+                    {% endfor %}
+                </div>
+
+                <!-- Paginação -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Próxima</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled"><span class="page-link">Próxima</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.core',
     'apps.news',
+    'apps.user',
 ]
 
 MIDDLEWARE = [
@@ -151,4 +152,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 # login vai direcionar para a url do 'django.contrib.auth.urls' que é parametro do accounts em urls.py
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'news:list_news_admin'
