@@ -1,4 +1,5 @@
 {% load news_tags %}
+{% if sponsored_news %}
 <!-- Sponsored News::begin -->
 <section class="mb-4 mb-lg-5">
     <div class="container">
@@ -8,14 +9,14 @@
             </div>
         </div>
         <div class="row g-4">
-            {% for news in news.sponsored %}
+            {% for news in sponsored_news %}
             <div class="col-md-4">
                 <article>
                     <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                         <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                             <div class="featured-post-container">
                                 <div class="featured-post-img featured-post-img-out">
-                                    {% category_badge news.category.name news.category.color %}
+                                    {% category_badge news.get_category_name_display news.category_color %}
                                     <picture>
                                         <img src="{{ news.image.url }}" alt="{{ news.title }}">
                                     </picture>
@@ -35,3 +36,4 @@
     </div>
 </section>
 <!-- Sponsored News::begin -->
+ {% endif %}

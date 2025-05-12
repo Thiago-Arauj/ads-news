@@ -1,0 +1,20 @@
+<div class="row mb-4">
+    <form method="get" class="form-inline">
+        <div class="row">
+            <div class="col-md">
+                <input class="form-control" type="text" name="search" placeholder="Pesquisar por título..."
+                    value="{{ request.GET.search }}">
+            </div>
+            <div class="col-md">
+                <select class="form-control" name="order_by">
+                    <option value="title" {% if request.GET.order_by == 'title' %}selected{% endif %}>Titulo da Notícia(A-Z)</option>
+                    <option value="-created_at" {% if request.GET.order_by == '-created_at' %}selected{% endif %}>Mais Recentes</option>
+                    <option value="created_at" {% if request.GET.order_by == 'created_at' %}selected{% endif %}>Data (Mais Antigas)</option>
+                </select>
+            </div>
+            <div class="col-md">
+                <button class="btn btn-dark" type="submit">Filtrar</button>
+            </div>
+        </div>
+    </form>
+</div>

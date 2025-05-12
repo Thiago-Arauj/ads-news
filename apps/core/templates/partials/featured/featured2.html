@@ -1,4 +1,5 @@
 {% load news_tags %}
+{% if featured_news_2 %}
 <!-- Featured 2::begin -->
 <section class="mb-4 mb-lg-5">
     <div class="container">
@@ -8,14 +9,14 @@
             </div>
         </div>
         <div class="row g-4">
-            {% for news in news.featureds %}
+            {% for news in featured_news_2 %}
             <div class="col-sm-6 col-lg-3">
                 <article>
                     <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
                         <a href="{% url 'read_news' news.id %}" title="{{ news.title }}">
                             <div class="featured-post-container">
                                 <div class="featured-post-img">
-                                    {% category_badge news.category.name news.category.color %}
+                                    {% category_badge news.get_category_name_display news.category_color %}
                                     <picture>
                                         <img src="{{ news.image.url }}" alt="{{ news.title }}">
                                     </picture>
@@ -34,3 +35,4 @@
     </div>
 </section>
 <!-- Featured 2::end -->
+ {% endif %}
