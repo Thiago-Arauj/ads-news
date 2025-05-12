@@ -15,6 +15,7 @@ class Category(BaseModel):
         choices=CategoryChoices.choices,
         unique=True,
         default=CategoryChoices.WORLD,
+        default=CategoryChoices.THIRD_PARTY,
         verbose_name="Categoria"
     )
     category_color = models.CharField(
@@ -44,6 +45,7 @@ class Category(BaseModel):
 
     def __str__(self):
         return str(self.name)
+        return str(self.category_name)
 
 
 class News(Category):
@@ -63,6 +65,12 @@ class News(Category):
     )
     
     views = models.PositiveIntegerField(default=0, verbose_name="Visualizações")
+=======
+    views = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Visualizações"
+    )
+>>>>>>> origin/dev
     in_carousel = models.BooleanField(default=False, verbose_name="Slide")
     is_featured = models.BooleanField(default=False, verbose_name="Destacar")
     is_sponsored = models.BooleanField(
