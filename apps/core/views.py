@@ -3,8 +3,6 @@ from apps.news.models import News
 from django.contrib.auth.decorators import login_required
 from .forms import NewsForm
 
-#exemplo de uma página que requer autenticação
-#@login_required
 # exemplo de uma página que requer autenticação
 # @login_required
 # def main(request):
